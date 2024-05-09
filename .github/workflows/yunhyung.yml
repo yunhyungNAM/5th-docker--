@@ -73,7 +73,7 @@ jobs:
           script: |
             sudo docker stop github-actions-demo
             sudo docker rm github-actions-demo
-            sudo docker run -it -d -p 8080:8080 --name github-actions-demo aaronryu/github-actions-demo
+            sudo docker run -it -d -p 8080:8080 --name github-actions-demo ${{ secrets.DOCKERHUB_USERNAME }}/github-actions-demo
 
       # (3) CD : Docker 컨테이너 수행 5) Remove Github IP from security group
       - name: Remove IP FROM security group
